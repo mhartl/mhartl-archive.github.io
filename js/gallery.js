@@ -8,6 +8,10 @@ function activateGallery() {
                            querySelector("img");
 
   thumbnails.forEach(function(thumbnail) {
+    // Preload images.
+    new Image().src = thumbnail.src;
+    new Image().src = thumbnail.dataset.largeVersion;
+
     thumbnail.addEventListener("click", function() {
       // Set clicked image as display image.
       let newImageSrc = thumbnail.dataset.largeVersion;
